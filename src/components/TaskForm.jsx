@@ -16,9 +16,12 @@ function TaskForm() {
     setDescription("");
   };
   return (
-    <form onSubmit={handleSubmit}>
+    <div className="max-w-md mx-auto">
+      <h1 className="text-2xl font-bold text-white mb-3">Ingresar tarea</h1>
+      <form onSubmit={handleSubmit} className="bg-slate-800 p-10 mb-4">
       <input
         placeholder="Escribe tu tarea"
+        className="bg-slate-300 p-3 w-full mb-2"
         onChange={(e) => {
           setTitle(e.target.value);
         }}
@@ -27,13 +30,15 @@ function TaskForm() {
       />
       <textarea
         placeholder="Description"
+        className="bg-slate-300 p-3 w-full mb-2"
         onChange={(e) => {
           setDescription(e.target.value);
         }}
         value={description}
       ></textarea>
-      <button>Save</button>
+      <button className="bg-indigo-500 px-3 py-1 text-white">Save</button>
     </form>
+    </div>
   );
 }
 
